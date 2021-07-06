@@ -1,0 +1,10 @@
+<table id="board" border="1">
+<tr *ngFor="let die of dice; let x = index">
+    <td *ngFor="let die of dice; let y = index" >
+        <app-die (onSelectDie)="selectDie(dice[x][y])" [die] = "dice[x][y]"></app-die>
+    </td>
+</tr>
+</table>
+<button (click)="onSubmit()" >Submit</button>
+<div>Score: {{score}}<div>
+<div *ngFor="let word of wordList">{{word}}</div>
